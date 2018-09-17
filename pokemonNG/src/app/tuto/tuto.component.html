@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="center">
+	<div class="container">
+
+
+
+
+		<h1>Tuto</h1>
+		<button (click)="onClick()">Cliquer ici</button>
+		<div class="row">
+
+			<div class="col s12 m6">
+				<h6>Récupérer les valeurs entrées par les utilisateurs</h6>
+				<p>
+					entrée 1 : <input (keyup)="onTest($event)"> sortie 1 :
+					{{value}}
+				</p>
+			</div>
+
+			<div class="col s12 m6">
+				<h6>Les variables référencées dans le template</h6>
+				<p class="title">
+					entrée 2 : <input #myBox (keyup)="onKey(myBox.value)">
+					sortie 2 : {{myOut}}
+				</p>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col s12 m6">
+				<h6>Détecter l'appui sur la touche Entrée</h6>
+				entrée 3 : <input #box (keyup.enter)="values=box.value">
+				sortie 3 : {{values}}
+			</div>
+
+			<div class="col s12 m6">
+				<h6>Détecter la perte de focus sur un élément</h6>
+				entrée 4 : <input #box2 (blur)="values2=box2.value"> sortie
+				4 : {{values2}}
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col s12 m6">
+				<h6>La directive NgIf</h6>
+				entrée 4 : <input #box3 (keyup.enter)="values3=box3.value"
+					(blur)="values3=box3.value"> <span *ngIf="values3 == '123'">
+					sortie 4 : {{values3}}</span>
+			</div>
+
+			<div class="col s12 m6">
+				<h6>La directive NgFor</h6>
+				<span *ngFor="let pokemon of pokemons">- {{pokemon.name}}<br /></span>
+			</div>
+
+		</div>
+
+
+
+	</div>
+</div>
